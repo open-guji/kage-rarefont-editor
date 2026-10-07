@@ -1,0 +1,143 @@
+0073	u0073 u0073-italic u0073-sans u0073-u0300 u0073-u0313 u0073-u0329 u0073-u032a u0073-u20de	
+0222	u0222	
+10056	u10056	
+10621	u10621	
+10fed	u10fed	
+114d	u114d	
+1714a	u1714a u1714a-var-001	
+179b3	u179b3 u179b3-var-001	
+17a8e	u17a8e u17a8e-var-001	
+17ae2	u17ae2 u17ae2-var-001	
+17ec0	u17ec0 u17ec0-var-001	
+18423	u18423 u18423-var-001	
+1858d	u1858d u1858d-var-001 u1858d-var-002	
+18b94	u18b94	
+1b151	u1b151 u1b151-halfwidth u1b151-u3099 u1b151-u309a u1b151-vert	
+1d70	u1d70	
+1e3e	u1e3e u1e3e-fullwidth u1e3e-sans	
+1ee47	u1ee47	
+1f036	u1f036	
+1f201	u1f201	
+1f5db	u1f5db	
+20297	u20297	hkcs_m20297 lp_lps-00028260 u20297
+2056e	u2056e u2056e-j	hkcs_m2056e lp_lps-00028987 simch-kx_t013008 u2056e-j zihai-084427
+20640	u20640	hkcs_m20640 lp_lps-00029197 u20640
+20749	u20749 u20749-g u20749-jv u20749-t	hkcs_m20749 lp_lps-00029462 lp_lps-00120571 lp_lps-00137992 u20749-g u20749-jv u20749-t
+20958	u20958 u20958-j	dkw-02646 koseki-030940 lp_lps-00029989 simch-kx_t158802 u20958-j zihai-004631
+20d5a	u20d5a u20d5a-jv	lp_lps-00031015 u20d5a-jv zihai-039932
+213a9	u213a9 u213a9-j	dkw-05302 hdic-tanki03_hkrm-06054211 hdic-tanki03_hkrm-06054212 hkcs_m213a9 jmj-033111 koseki-060440 lp_lps-00032630 simch-kx_t154912 u213a9-j
+218d5	u218d5 u218d5-j	hkcs_m218d5 koseki-077960 lp_lps-00033954 u218d5-j zihai-070314
+220ec	u220ec u220ec-g u220ec-j	hkcs_m220ec jmj-035096 koseki-101620 lp_lps-00036025 lp_lps-00112941 simch-kx_t033320 u220ec u220ec-g u220ec-j zihai-046956
+227ba	u227ba	hdic_hkrm-06098220 lp_lps-00037767 u227ba
+22822	u22822 u22822-jv	hkcs_m22822 lp_lps-00037871 u22822 u22822-jv zihai-060602
+22c7b	u22c7b u22c7b-j	hs_tk-00140710 koseki-140710 lp_lps-00038984 simch-kx_t044904 u22c7b-j zihai-035519
+22d0d	u22d0d u22d0d-i u22d0d-jv u22d0d-v	lp_lps-00039130 lp_lps-00126062 tudien-11407 tudien-11605 tudien-12102 tudien-18802 tudien-18806 tudien-18915 u22d0d u22d0d-i u22d0d-jv u22d0d-v
+23a4	u23a4 u23a4-fullwidth u23a4-vert	
+23e99	u23e99	lp_lps-00043622 u23e99
+240f0	u240f0 u240f0-j	koseki-210860 lp_lps-00044221 simch-kx_t066114 u240f0-j zihai-058401
+25104	u25104 u25104-g	dkw-23149 hkcs_m25104 lp_lps-00048337 simch-kx_t080016 u25104 u25104-g zihai-104806
+25672	u25672 u25672-g u25672-j u25672-var-001	hkcs_m25672 koseki-276530 lp_lps-00049727 simch-kx_t083927 simch-kx_t084325 u25672-g u25672-j u25672-var-001 zihai-098635
+25823	u25823 u25823-g	hkcs_m25823 lp_lps-00050160 u25823 u25823-g zihai-108636
+2598d	u2598d u2598d-g u2598d-j u2598d-jv	dkw-25539 hkcs_m2598d koseki-285810 lp_lps-00050522 simch-kx_t086621 u2598d-g u2598d-j u2598d-jv zihai-113301
+25a9c	u25a9c u25a9c-h u25a9c-jv	hkcs_m25a9c lp_lps-00050793 u25a9c u25a9c-h u25a9c-jv
+26084	u26084 u26084-j	dkw-27672 koseki-309200 lp_lps-00052305 simch-kx_t093116 u26084-j u2ff0-u7e9f-u7686 xieyangwang_rpc00073
+267be	u267be u267be-g	hdic-tanki09_hkrm-10114531 hdic_hkrm-10114531 lp_lps-00054155 u267be u267be-g zihai-091536
+2699f	u2699f	lp_lps-00054636 u2699f
+269d1	u269d1	lp_lps-00054686 u269d1
+26b95	u26b95 u26b95-jv u26b95-var-001	cbeta-11404 hkcs_m26b95 lp_lps-00055138 u26b95-jv u26b95-var-001
+26f4f	u26f4f u26f4f-itaiji-001 u26f4f-jv	inaz_hkrm-08039431 inaz_hkrm-08043830 koseki-364440 lp_lps-00056092 simch-kx_t106204 u26f4f u26f4f-itaiji-001 u26f4f-jv zihai-029802
+27014	u27014 u27014-var-001	hkcs_m27014 lp_lps-00056289 simch-kx_t156644 u27014 u27014-var-001 zihai-030127
+275cc	u275cc u275cc-j u275cc-jv	lp_lps-00057753 simch-kx_d110814 simch-kx_t110814 u275cc u275cc-j u275cc-jv
+276da	u276da u276da-g u276da-j	hkcs_m276da lp_lps-00058023 lp_lps-00116017 simch-kx_t112041 u276da-g u276da-j
+2789d	u2789d u2789d-j u2789d-jn u2789d-ue0100 u2789d-ue0101 u2789d-var-001 u2789d-var-002 u2789d-var-003	hkcs_m2789d hs_u2789d hs_u2789d-var-001 lp_lps-00058474 lp_lps-00155089 simch-kx_d113806 simch-kx_t113806 toki-01084830 u2789d u2789d-j u2789d-jn u2789d-ue0101 u2789d-var-001 u2789d-var-002 u2789d-var-003 u2ff0-u5389-u898b
+27e06	u27e06 u27e06-j	dkw-36936 koseki-418890 lp_lps-00059859 simch-kx_t121149 simch-kx_t121222 u27e06-j u2ff1-u20b65-u8d1d
+27feb	u27feb u27feb-j	lp_lps-00060344 simch-kx_t161894 tudien-11806 u27feb-j zhangxinfang_hkrm-05084610
+281fa	u281fa u281fa-gv	lp_lps-00060871 lp_lps-00120954 u281fa u281fa-gv
+28217	u28217 u28217-i u28217-j	dkw-38042 gt-50813 koseki-430590 lp_lps-00060900 simch-kx_t161946 u28217 u28217-i u28217-j zihai-039531
+285ed	u285ed u285ed-g u285ed-j u285ed-t u285ed-ue0100 u285ed-ue0101 u285ed-ufe00 u285ed-var-001 u285ed-var-002	hkcs_m285ed hs_u285ed hs_u285ed-var-001 hs_u285ed-var-002 koseki-444240 koseki-444870 lp_lps-00061882 lp_lps-00140036 lp_lps-00155191 lp_lps-00155192 simch-kx_t126521 simch-kx_t126629 u285ed u285ed-g u285ed-j u285ed-t u285ed-ue0101 u285ed-ufe00 u285ed-var-001 u285ed-var-002 u2f9e1 u2f9e1-t zihai-065250
+28c56	u28c56 u28c56-g u28c56-i	hkcs_m28c56 lp_lps-00063523 lp_lps-00127064 u28c56 u28c56-g u28c56-i
+28e21	u28e21 u28e21-jv u28e21-t	lp_lps-00063982 u28e21-jv u28e21-t
+28ffb	u28ffb	koseki-477160 lp_lps-00064456 simch-kx_t162337 u28ffb
+29687	u29687 u29687-j	hkcs_m29687 koseki-498340 lp_lps-00066132 simch-kx_t141613 u29687-j
+2993a	u2993a u2993a-j	dkw-44888 hkcs_m2993a irg2015-04943 lp_lps-00066823 simch-kx_t162692 u2993a-j zihai-165444
+2a09	u2a09	
+2a23f	u2a23f u2a23f-j	hdic_hkrm-09126240 kaido_hkrm-09126240 lp_lps-00069132 simch-kx_t150513 u2a23f-j
+2a3e5	u2a3e5 u2a3e5-jv	dkw-47983 hkcs_m2a3e5 koseki-542830 lp_lps-00069554 simch-kx_d151721 simch-kx_t151721 u2a3e5-jv
+2a64c	u2a64c u2a64c-j	koseki-550800 lp_lps-00070169 simch-kx_t153529 u2a64c-j
+2ac82	u2ac82 u2ac82-jv	lp_lps-00071727 u2ac82-jv
+2acee	u2acee	lp_lps-00071835 u2acee
+2aed0	u2aed0 u2aed0-g u2aed0-jv u2aed0-u	hkcs_m2aed0 lp_lps-00072317 u2aed0-g u2aed0-jv u2aed0-u zihai-071846
+2b088	u2b088 u2b088-g u2b088-u u2b088-var-001	lp_lps-00072757 lp_lps-00142634 u2b088-g u2b088-u u2b088-var-001
+2b38c	u2b38c u2b38c-g u2b38c-jv	lp_lps-00073529 lp_lps-00117325 u2b38c-g u2b38c-jv
+2b6c3	u2b6c3	lp_lps-00074352 u2b6c3
+2b8ca	u2b8ca u2b8ca-g u2b8ca-jv u2b8ca-var-001	hkcs_m2b8ca lp_lps-00074863 lp_lps-00117466 sawd-35807 u2b8ca u2b8ca-g u2b8ca-jv u2b8ca-var-001
+2bfe9	u2bfe9	lp_lps-00076686 u2bfe9
+2c018	u2c018 u2c018-g	ebag_t63826 lp_lps-00076733 lp_lps-00117690 u2c018 u2c018-g
+2c4ad	u2c4ad u2c4ad-j	lp_lps-00077906 u2c4ad-j u2ff0-u793b-u5e00 waseikanji-no-jiten-1259
+2c609	u2c609 u2c609-jv u2c609-var-001	hkcs_m2c609 lp_lps-00078254 u2c609-jv u2c609-var-001 utc-00880
+2c700	u2c700	hkcs_m2c700 lp_lps-00078501 simch-kx_t063708 u2c700
+2cad	u2cad	
+2cda4	u2cda4 u2cda4-g	hkcs_m2cda4 lp_lps-00080201 u2cda4-g
+2d35b	u2d35b u2d35b-jv u2d35b-s	lp_lps-00081650 lp_lps-00133211 u2d35b u2d35b-jv u2d35b-s
+2d5f1	u2d5f1 u2d5f1-jv u2d5f1-k	ka-kc05031 lp_lps-00082312 lp_lps-00130641 u2d5f1-jv u2d5f1-k
+2dc34	u2dc34 u2dc34-jv	lp_lps-00083915 u2dc34 u2dc34-jv
+2e2ed	u2e2ed	lp_lps-00085636 u2e2ed
+2e517	u2e517 u2e517-gv u2e517-j	hdic_hkrm-10029520 juki-bad3 lp_lps-00086190 lp_lps-00121355 u2e517-gv u2e517-j
+2e6fa	u2e6fa	lp_lps-00086673 u2e6fa
+2e9ac	u2e9ac u2e9ac-jv u2e9ac-k	ka-kc06893 lp_lps-00087363 lp_lps-00131075 u2e9ac u2e9ac-jv u2e9ac-k
+2eafb	u2eafb u2eafb-g u2eafb-jv	lp_lps-00087698 lp_lps-00118713 u2eafb u2eafb-g u2eafb-jv u2ff0-u29d4b-u5c9c u2ff0-u9c7c-u5c9c
+2eb21	u2eb21 u2eb21-g u2eb21-u	hkcs_m2eb21 lp_lps-00087736 u2eb21-g u2eb21-u
+2ed56	u2ed56 u2ed56-g u2ed56-jv u2ed56-t	lp_lps-00088286 lp_lps-00118936 u2ed56 u2ed56-g u2ed56-jv u2ed56-t
+2f8d8	u2f8d8 u2f8d8-t	
+2f93d	u2f93d	
+30058	u30058 u30058-g u30058-jv	hkcs_m30058 lp_lps-00088638 u30058 u30058-jv zihai-000719
+3021	u3021	
+30cc9	u30cc9 u30cc9-gv u30cc9-jv u30cc9-s u30cc9-var-001	irg2015-03732 lp_lps-00091823 lp_lps-00121457 u30cc9 u30cc9-gv u30cc9-jv u30cc9-var-001
+310c5	u310c5 u310c5-g u310c5-jv	lp_lps-00092843 lp_lps-00119982 u2ffa-u98ce-u670b u310c5 u310c5-g u310c5-jv
+3111f	u3111f u3111f-jv	hkcs_m3111f irg2015-04931 lp_lps-00092933 u3111f u3111f-jv
+315a2	u315a2 u315a2-g u315a2-jv u315a2-u	lp_lps-00094083 lp_lps-00142940 u315a2-g u315a2-jv
+31996	u31996 u31996-v	lp_lps-00095095 u31996 u31996-v
+31b51	u31b51 u31b51-t u31b51-var-001	lp_lps-00095538 lp_lps-00141738 u31b51 u31b51-t u31b51-var-001
+31f8b	u31f8b u31f8b-jv u31f8b-v	lp_lps-00096620 lp_lps-00147509 u31f8b-jv u31f8b-v
+3209f	u3209f u3209f-jv u3209f-t	lp_lps-00096896 lp_lps-00142033 u3209f u3209f-jv u3209f-t
+320d1	u320d1 u320d1-jv u320d1-uk	lp_lps-00096946 lp_lps-00143964 u320d1-jv u320d1-uk
+32984	u32984 u32984-g	u32984 u32984-g
+32a62	u32a62 u32a62-jv u32a62-v u32a62-var-001	u32a62 u32a62-jv u32a62-v u32a62-var-001
+32c33	u32c33	u32c33
+3300f	u3300f	u3300f
+33fb	u33fb	
+3656	u3656 u3656-jv u3656-k u3656-var-001 u3656-var-002	hkcs_m3656 lp_lps-00000599 lp_lps-00128252 nyukan-f8ac u3656-jv u3656-k u3656-var-001 u3656-var-002
+3dfa	u3dfa u3dfa-g u3dfa-jv	hkcs_m3dfa lp_lps-00002555 lp_lps-00099449 u3dfa u3dfa-g u3dfa-jv
+41e4	u41e4	hkcs_m41e4 jmj-003276 koseki-290330 lp_lps-00003557 simch-kx_t088118 u41e4
+427a	u427a	hdic-tanki04_hkrm-07035540 hdic_hkrm-07035540 hkcs_m427a jmj-003430 koseki-300110 lp_lps-00003707 simch-kx_t090639 u427a
+45e8	u45e8 u45e8-j	hkcs_m45e8 jmj-004354 lp_lps-00004585 simch-kx_t109525 u45e8-j
+4ab1	u4ab1 u4ab1-j	dkw-43342 hdic_hkrm-03024510 hdic_hkrm-03030312 hkcs_m4ab1 jmj-005527 lp_lps-00005810 simch-kx_t139910 u4ab1 u4ab1-j zihai-157928
+5445	u5445 u5445-g u5445-h u5445-j u5445-k u5445-t	dkw-03391 hdic_hkrm-02031731 hkcs_m5445 hkcs_u5445 koseki-039210 lp_lps-00008198 lp_lps-00101301 lp_lps-00122476 lp_lps-00128590 otakusei_hkrm-02031731 simch-kx_t018108 tudien-58403 u5445-g u5445-h u5445-j u5445-k u5445-t zihai-038503
+5b87	u5b87 u5b87-g u5b87-g09 u5b87-j u5b87-k u5b87-kp u5b87-sans u5b87-t u5b87-ue0100 u5b87-v	akr-15091 cc-2279 dkw-07067 fitzgerald_u-1b00a fitzgerald_u-1b00b hdic-tanki04_hkrm-07049521 hdic_u5b87-var-001 hkcs_m5b87 hkcs_m5b87-p02-s00 hkcs_u5b87 hs_u5b87 jmj-010112 juki-ac09 k0-6954 koseki-900070 lp_lps-00010056 lp_lps-00102298 lp_lps-00135331 simch-kx_kp0fadd simch-kx_t028202 takata_my-gaiji-0165 tron-09-832a tudien-59706 tudien-59713 u1b00a u1b00b u2ff1-u5196-u4e8e u2ff1-u5b80-u5e72 u2ff8-u5382-u4e88 u2ff8-u5382-u4e8e u5b87-g u5b87-g09 u5b87-j u5b87-k u5b87-kp u5b87-sans u5b87-t u5b87-v yuuji0425_opop-u11 zihai-003608 zihai-043734 zihai-061416 zihai-061636
+62f8	u62f8 u62f8-g u62f8-h u62f8-j u62f8-k u62f8-kp u62f8-t	hkcs_m62f8 hs_tk-00135080 hs_u62f8 jgj-003631 koseki-135080 lp_lps-00011961 lp_lps-00103761 lp_lps-00122999 simch-kx_t042818 u62f8-g u62f8-h u62f8-j u62f8-k u62f8-kp u62f8-t zihai-033819 zihai-033820
+6a67	u6a67 u6a67-g u6a67-j u6a67-ue0100 u6a67-ue0101 u6a67-ue0102 u6a67-ue0103 u6a67-var-001	dkw-15586 hdic_hkrm-03094410 hkcs_m6a67 hs_u6a67 hs_u6a67-var-001 hs_u6a67-var-002 juki-b38f lp_lps-00013864 lp_lps-00104694 lp_lps-00150268 lp_lps-00150269 simch-kx_t055502 toki-01045940 u2ff0-u6728-u2d98c u6a67 u6a67-g u6a67-j u6a67-ue0102 u6a67-ue0103 u6a67-var-001 waseikanji-no-jiten-0899 zihai-077441 zihai-077939
+728a	u728a u728a-g u728a-var-001 u728a-var-002	hkcs_m728a hs_u728a lp_lps-00015947 u728a u728a-g u728a-var-001 u728a-var-002 zihai-085226
+7634	u7634 u7634-g u7634-j u7634-ue0100 u7634-ue0101 u7634-ue0102	akr-20738 dkw-22455 hdic-tanki05_hkrm-07128130 hkcs_m7634 hs_u7634 hs_u7634-var-001 koseki-251910 lp_lps-00016885 lp_lps-00106203 lp_lps-00150938 simch-kx_t077923 u7634 u7634-g u7634-j u7634-ue0102 zihai-111647
+797c	u797c u797c-g u797c-j u797c-ue0100 u797c-ue0101 u797c-ue0102	akr-20898 ebag_kxr-01450 ebag_s113-252 ebag_s113-253 hdic-tanki04_hkrm-07006310 hdic_hkrm-07006310 hkcs_m797c hs_u797c hs_u797c-var-001 koseki-276640 lp_lps-00017725 lp_lps-00106561 lp_lps-00151156 simch-kx_t084404 u797c-g u797c-j yp_ktb-1018162 zihai-098646
+7f5b	u7f5b u7f5b-g u7f5b-itaiji-001 u7f5b-ue0100 u7f5b-ue0101 u7f5b-ue0102 u7f5b-var-001	dkw-28241 hdic-tanki07_hkrm-09011510 hkcs_m7f5b hs_u7f5b hs_u7f5b-var-001 jmj-020539 koseki-315770 lp_lps-00019228 lp_lps-00107260 lp_lps-00151608 simch-kx_t094718 u2ff1-u2053f-u722a u7f5b u7f5b-g u7f5b-itaiji-001 u7f5b-var-001 zihai-122337 zihai-122338 zihai-122435 zihai-122638
+84e9	u84e9	extf-06295 hkcs_m84e9 hs_u84e9 inaz_hkrm-08037710 ka-kc05656 kc-05656 koseki-358650 lp_lps-00020650 simch-kx_t105208 u84e9 zihai-028511
+8855	u8855 u8855-g u8855-t u8855-ue0100	hdic-tanki01_hkrm-01044140 hdic_hkrm-01044140 hkcs_m8855 hs_u8855 lp_lps-00021526 lp_lps-00108374 simch-kx_t110914 u8855 u8855-g u8855-t xieyangwang_rgc00122 zihai-048115
+8a8c	u8a8c u8a8c-g u8a8c-j u8a8c-k u8a8c-t u8a8c-ue0100	akr-17980 hdic_hkrm-05055130 hkcs_m8a8c hs_u8a8c k0-723c linchuyi_hkrm-05055130 lp_lps-00022093 lp_lps-00108672 lp_lps-00137018 simch-kx_kp0eaed simch-kx_t116117 tomm_u8a8c tudien-18214 u8a8c-g u8a8c-j u8a8c-t
+8b88	u8b88 u8b88-j	hkcs_m8b88 hkcs_u8b88 hs_u8b88 koseki-410020 lp_lps-00022345 simch-kx_t118609 u2ff0-u8ba0-u5386 u8b88-j
+8dc3	u8dc3 u8dc3-g u8dc3-jv	hkcs_m8dc3 hs_u8dc3 lp_lps-00022916 lp_lps-00108911 u8dc3-g u8dc3-jv zhangxinfang_hkrm-05075810
+90e6	u90e6 u90e6-g u90e6-jv u90e6-var-001	hkcs_m90e6 hs_u90e6 lp_lps-00023719 u90e6-g u90e6-jv
+931a	u931a u931a-g u931a-h u931a-j u931a-k u931a-t u931a-ue0100 u931a-ue0101 u931a-ue0102 u931a-ue0103 u931a-v u931a-var-001 u931a-var-002 u931a-var-003	aj1-07006 akr-18436 hdic_hkrm-08131520 hkcs_m931a hkcs_u931a hs_u931a hs_u931a-var-001 hs_u931a-var-002 hs_u931a-var-003 juki-931a juki-bde3 k0-6e36 koseki-460210 lp_lps-00024283 lp_lps-00109757 lp_lps-00124630 lp_lps-00129997 lp_lps-00145355 lp_lps-00153520 lp_lps-00153521 lp_lps-00153522 simch-kx_kp0ebe8 simch-kx_t131016 toki-01092390 u931a-g u931a-h u931a-j u931a-k u931a-t u931a-ue0100 u931a-ue0102 u931a-ue0103 u931a-v u931a-var-001 u931a-var-002 u931a-var-003
+98c8	u98c8 u98c8-j u98c8-ue0100 u98c8-var-001	hdic-tanki08_hkrm-10052231 hdic_hkrm-10052231 hkcs_m98c8 hs_u98c8 juki-98c8 lp_lps-00025737 naomi2319_test20 simch-kx_d141436 simch-kx_t141436 u98c8 u98c8-j u98c8-var-001 xieyangwang_rpc00571
+a75a	ua75a	
+ad49	uad49	
+ae40	uae40	
+af6e	uaf6e	
+b053	ub053	
+b211	ub211	
+b6ae	ub6ae	
+bbfd	ubbfd	
+c252	uc252	
+c84c	uc84c	
+d1cb	ud1cb	
+d666	ud666	
+fcdc	ufcdc	
