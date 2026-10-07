@@ -177,7 +177,7 @@ const EditorControls = (props: EditorControlsProps) => {
         </button>
         {exportMsg && <span className={styles.exportMsg}>{exportMsg}</span>}
         <button onClick={finishEdit}>
-          {t('finish edit')}
+          {t('export kage')}
         </button>
       </div>
     </div>

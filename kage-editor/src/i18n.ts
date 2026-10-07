@@ -30,24 +30,10 @@ const resources = {
   },
 };
 
-let lng: keyof typeof resources;
-switch (args.host.split('.')[0]) {
-  case 'en':
-    lng = 'en';
-    break;
-  case 'ko':
-    lng = 'ko';
-    break;
-  case 'zhs':
-    lng = 'zh-Hans';
-    break;
-  case 'zht':
-    lng = 'zh-Hant';
-    break;
-  default:
-    lng = 'ja';
-    break;
-}
+const isLanguage = (l: string | null): l is keyof typeof resources => (
+  l !== null && Object.hasOwn(resources, l)
+);
+const lng: keyof typeof resources = isLanguage(args.lang) ? args.lang : 'ja';
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next

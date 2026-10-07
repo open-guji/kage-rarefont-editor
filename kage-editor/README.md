@@ -1,5 +1,7 @@
 # kage-editor
 
+> **本目录为 kage-rarefont 的改造版**（说明见仓库根目录 README.md）。与上游的主要差异：字形数据改为读取随站点部署的 `glyph-data/` 静态文件，不再访问 GlyphWiki API、代理或本地服务；搜索缩略图由浏览器内 WASM 引擎渲染；「編集終了」（提交到 GlyphWiki）改为「导出KAGE数据」（下载 `<名字>.kage.txt`）；废弃 `host`、`ssl`、`related`、`edittime`、`summary` 参数，界面语言用 `#lang=` 指定。以下为上游原文，其中的书签脚本在本改造版中不可用。
+
 The glyph editor used on [GlyphWiki](https://glyphwiki.org/)
 
 [GlyphWiki](https://glyphwiki.org/) で使用されている字形エディタ
@@ -87,7 +89,7 @@ javascript:(function(l,f){l.href='https://kurgm.github.io/kage-editor/#ssl='+(l.
   + Del: 選択分を削除
   + 矢印キー / Ctrl+{H,J,K,L}: 選択分を1px移動 (Shift+ で5px移動)
   + Esc: 手書きモード終了, 選択解除
-  + Ctrl+S: 編集終了
+  + Ctrl+S: KAGEデータ書き出し（上游: 編集終了）
 
 ## 未対応の機能
 - 部品自動配置（不要？）

@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import GlyphArea from './components/GlyphArea';
 import EditorControls from './components/EditorControls';
 import PartsSearch from './components/PartsSearch'
-import SubmitForm from './components/SubmitForm';
+import KageExport from './components/KageExport';
 import OptionModal from './components/OptionModal';
 
 import { useShortcuts } from './shortcuts';
@@ -28,7 +28,7 @@ function App() {
       <GlyphArea className={styles.glyphArea} />
       <EditorControls className={styles.editorControls} />
       <PartsSearch className={styles.partsSearchArea} />
-      <SubmitForm />
+      <KageExport />
       <OptionModal />
     </div>
   );

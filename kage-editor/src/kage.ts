@@ -10,7 +10,7 @@ import { StretchParam } from './kageUtils/stretchparam';
 import store from './store';
 import { editorActions } from './actions/editor';
 
-import { getSource } from './callapi';
+import { getSource } from './glyphData';
 
 import {
   isKageCppReady,

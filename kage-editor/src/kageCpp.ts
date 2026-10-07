@@ -153,3 +153,18 @@ export const renderSvgCpp = (glyph: Glyph, buhinMap: Map<string, string>, shotai
   const data = glyph.map(unparseGlyphLine).join('$');
   return engine.renderSvg(data, pixel);
 };
+
+// Standalone SVG (e.g. search-result thumbnails) of glyph data whose parts
+// are given explicitly instead of coming from the editor's buhinMap.
+export const renderSvgWithPartsCpp = (data: string, parts: Map<string, string>, pixel: number): string => {
+  if (!engine) {
+    return '';
+  }
+  parts.forEach((source, name) => {
+    if (pushedSources.get(name) !== source) {
+      pushedSources.set(name, source);
+      engine!.setBuhin(name, source);
+    }
+  });
+  return engine.renderSvg(data, pixel);
+};

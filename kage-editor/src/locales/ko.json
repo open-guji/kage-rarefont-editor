@@ -85,7 +85,7 @@
   "end freehand": "필기 종료",
   "decompose": "부품 분해",
   "options": "설정…",
-  "finish edit": "편집 종료",
+  "export kage": "KAGE 데이터 내보내기",
   "search": "검색",
   "searching": "검색중",
   "search error": "오류: {{message}}",

@@ -85,7 +85,7 @@
   "end freehand": "Stop freedraw",
   "decompose": "Decompose",
   "options": "Options…",
-  "finish edit": "Finish editing",
+  "export kage": "Export KAGE data",
   "search": "Search",
   "searching": "Searching",
   "search error": "Error: {{message}}",

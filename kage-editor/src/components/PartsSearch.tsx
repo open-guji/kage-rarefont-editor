@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 import { useAppDispatch } from '../hooks';
 import { editorActions } from '../actions/editor';
-import { search } from '../callapi';
+import { search } from '../glyphData';
 import args from '../args';
 
 import PartsList from './PartsList';

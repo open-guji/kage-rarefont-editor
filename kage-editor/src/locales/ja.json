@@ -85,7 +85,7 @@
   "end freehand": "手書き終了",
   "decompose": "部品分解",
   "options": "設定…",
-  "finish edit": "編集終了",
+  "export kage": "KAGEデータ書き出し",
   "search": "検索",
   "searching": "検索中",
   "search error": "エラー：{{message}}",

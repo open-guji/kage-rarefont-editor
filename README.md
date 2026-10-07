@@ -3,7 +3,7 @@
 > A glyph design workbench for rare/obsolete CJK characters missing from Unicode,
 > built on the Kage engine (Bezier-optimised C++ core, compiled to WebAssembly).
 
-基于 [GlyphWiki](https://glyphwiki.org/) 的 Kage 字形体系，把 **kage-editor**（浏览器字形编辑器）与 **kage-cpp**（贝塞尔曲线优化版 C++ 引擎）集成为一体：编辑器画布直接由 C++/WASM 引擎以三次贝塞尔曲线渲染，搜字、部件取源、缩略图渲染全部由本地 GlyphWiki dump 数据驱动，离线可用，并支持一键导出 1000×1000 SVG 矢量字形。
+基于 [GlyphWiki](https://glyphwiki.org/) 的 Kage 字形体系，把 **kage-editor**（浏览器字形编辑器）与 **kage-cpp**（贝塞尔曲线优化版 C++ 引擎）集成为一体：编辑器画布直接由 C++/WASM 引擎以三次贝塞尔曲线渲染，搜字、部件取源、缩略图渲染全部由随仓库提供的 GlyphWiki dump 静态数据驱动，不访问任何外部服务器，并支持一键导出 1000×1000 SVG 矢量字形与 Kage 源数据。
 
 本项目的主要用途：**为古籍整理、出土文献、方言用字等场景，制作 Unicode 尚未收录（或无合适字形来源）的罕用字**——通过 Kage 的部件引用机制拼装新字，导出矢量轮廓后接入字库生产流程。
 
@@ -12,36 +12,82 @@
 - **C++ 贝塞尔引擎渲染**：笔画轮廓为 Q/C 曲线而非折线近似；宋体（衬线、钩挑造型优化）与黑体实时切换
 - **完整编辑器交互**：笔画/部件选择、控制点拖动、拉伸、复制粘贴、手写、undo/redo、框选、反色蒙版——全部保留 kage-editor 原有能力
 - **SVG 导出**：工具栏一键导出，默认 1000×1000 像素（可选 500/2000），viewBox 保持 Kage 坐标系 `0 0 200 200`
-- **本地字形库**：加载官方 dump（约 214 万条记录），汉字按码位搜索（含版本变体与 related 关联字形）、部件引用实时取源、搜索结果缩略图由 WASM 引擎即时渲染
-- **离线可用**：不启动本地服务时回退 GlyphWiki 在线后端；WASM 加载失败时回退原 JS 引擎（折线渲染）
+- **Kage 数据导出**：「导出KAGE数据」按钮（或 Ctrl/⌘+S）下载当前字形的 Kage 源码 `<名字>.kage.txt`，可再导入 GlyphWiki 或其他 Kage 工具（原版编辑器的「编辑完毕」提交 GlyphWiki 功能已移除）
+- **内置字形库**：GlyphWiki 官方 dump（约 214 万条记录）预处理后随仓库提供；按汉字/码位搜索（含版本变体与 related 关联字形）、名字前缀搜索（≥5 字符，如 `toki-00`）、部件引用按需取源，搜索结果缩略图由浏览器内 WASM 引擎即时渲染
+- **纯静态、无外部依赖**：dump 预处理为分片静态文件（`kage-editor/public/glyph-data/`，已入库），编辑器只请求自身站点的文件，可部署到 Cloudflare Pages 等任意静态托管；WASM 加载失败时回退原 JS 引擎（折线渲染）
 
-## 快速部署
+## 部署
 
-环境要求：Node.js ≥ 20（前端构建与服务运行），无需 C++ 工具链（WASM 产物已随仓库提供）。
+编辑器是纯静态站点：构建产物 `kage-editor/build/`（前端约 1 MB + 字形数据约 230 MB / 8400 余个文件）放到任意静态托管即可，运行时只请求本站点的文件，不需要任何后端或外部服务。环境要求：Node.js ≥ 20（仅构建时需要），无需 C++ 工具链（WASM 产物已随仓库提供）。
+
+### Cloudflare Pages（Git 集成，推荐）
+
+在 Cloudflare 控制台 Workers & Pages → Create → Pages → 连接本 GitHub 仓库，构建设置：
+
+| 设置 | 值 |
+|---|---|
+| Production branch | `main` |
+| Root directory | `kage-editor` |
+| Build command | `npm run build` |
+| Build output directory | `build` |
+| 环境变量 | `NODE_VERSION=20` |
+
+之后每次推送 `main`（包括刷新字形数据）都会自动重新部署。
+
+### Cloudflare Pages（直接上传）
 
 ```bash
-# 1. 构建编辑器（需要 Node.js ≥ 20）
 cd kage-editor
-npm install
-npm run build      # 引擎产物 public/kage-wasm/ 会自动带入 build/
-cd ..
-
-# 2. 获取 GlyphWiki 官方 dump（约 114 MB，压缩包内含许可与说明；
-#    解压后数据约 1.2 GB，超过 GitHub 单文件限制，不随仓库分发，需自行下载）
-mkdir -p glyphwiki-dump && cd glyphwiki-dump
-curl -L -o dump.tar.gz https://glyphwiki.org/dump.tar.gz
-tar xzf dump.tar.gz            # 解出 dump_newest_only.txt 等
-cd ..
-
-# 3. 启动本地服务（加载约 214 万字形约 8 秒；node 版引擎产物已在 wasm-build/ 中）
-node kage-server.mjs --port 8788
-
-# 4. 浏览器打开（host 参数将编辑器后端指向本地服务）
-open "http://localhost:8788/#host=localhost:8788"
+npm ci
+npm run build
+npx wrangler pages deploy build --project-name <项目名>
 ```
 
-编辑已有字形示例（"漢"）：`http://localhost:8788/#name=u6f22&host=localhost:8788`
-从空白开始造字：直接打开 `http://localhost:8788/#host=localhost:8788`，用手写/笔画工具创作，或搜索部件拼合。
+### 其他静态托管
+
+同样执行 `npm ci && npm run build`，把 `kage-editor/build/` 的全部内容上传到站点根目录即可。
+
+注意：
+
+- 需部署在**域名根路径**（`index.html` 以绝对路径 `/manifest.json` 引用 manifest；其他资源均为相对路径）；
+- Cloudflare Pages 单站点上限 2 万个文件、单文件 25 MB，当前数据约 8400 个文件、单文件不超过 100 KB；
+- 数据文件为 `.txt`/`.json` 文本，托管方开启 gzip/brotli 压缩可显著减少传输（Cloudflare 默认开启）。
+
+### 本地开发 / 预览
+
+```bash
+cd kage-editor
+npm install
+npm run dev                         # 开发服务器（读取 public/glyph-data/）
+npm run build && npm run preview    # 预览构建产物
+```
+
+### 使用方式
+
+打开站点即可从空白开始造字（手写/笔画工具，或搜索部件拼合）。URL 参数（写在 `#` 之后，用 `&` 连接）：
+
+| 参数 | 说明 |
+|---|---|
+| `name` | 字形名，作为初始搜索词和导出文件名，如 `#name=u6f22` |
+| `data` | 初始 Kage 数据（URL 编码），如 `#data=99:0:0:0:0:200:200:u6f22` 以「漢」为部件开始编辑 |
+| `lang` | 界面语言：`ja`（默认）/ `en` / `ko` / `zh-Hans` / `zh-Hant` |
+
+成果导出：「导出SVG」下载矢量轮廓；「导出KAGE数据」（或 Ctrl/⌘+S）下载 Kage 源码文本。
+
+### 刷新字形数据（不定期）
+
+```bash
+# 下载官方 dump（约 114 MB，解压后约 1.2 GB，不入库）
+mkdir -p glyphwiki-dump && curl -L https://glyphwiki.org/dump.tar.gz | tar xz -C glyphwiki-dump
+node --max-old-space-size=8000 tools/build-glyph-data.mjs   # 约 30 秒
+git add kage-editor/public/glyph-data && git commit -m "glyph-data: GlyphWiki dump YYYY-MM-DD"
+```
+
+推送到 `main` 后，Cloudflare Pages（Git 集成）会自动以新数据重新部署。数据格式见 `tools/build-glyph-data.mjs` 头部注释。分块边界在刷新时保持稳定（沿用已有清单，仅拆分过大的块），只有内容变化的块会被改写，仓库增量较小。被引用的旧版本部件（如 `u963f@9`）从 `dump_all_versions.txt` 补入，按引用的确切版本渲染。dump 日期记录在 `glyph-data/meta.json`。
+
+## 本地服务 kage-server.mjs（参考，编辑器已不再使用）
+
+`kage-server.mjs` 是早期的本地 dump 服务（取源/搜索/SVG 缩略图接口，Node 版引擎在 `wasm-build/`），编辑器前端已不再对接它，保留作参考：`node kage-server.mjs --port 8788`（需 `glyphwiki-dump/`）。注意它对 `name@版本` 引用返回的是最新版而非该版本。
 
 ## 项目结构
 
@@ -51,19 +97,22 @@ open "http://localhost:8788/#host=localhost:8788"
 │   ├── public/kage-wasm/        # 浏览器版引擎产物 kage.js/kage.wasm（构建时带入 build/）
 │   └── src/
 │       ├── kageCpp.ts           # WASM 加载、部件库同步、逐笔画分离渲染
+│       ├── glyphData.ts         # 字形数据（读取 glyph-data/ 分片：取源、搜索）
+│       ├── thumbnail.ts         # 浏览器内 WASM 渲染搜索缩略图
 │       ├── svgExport.ts         # SVG 导出（默认 1000×1000）
 │       ├── kage.ts              # 统一渲染出口（C++ 优先，JS 引擎兜底）
 │       └── components/…         # Stroke/Glyph/EditorControls/PartsList 等适配改造
-├── kage-cpp/                    # C++ 引擎上游源码 + 最小扩展（逐笔画分离接口，未改动原算法）
-├── kage-server.mjs              # 本地字形数据服务（dump 搜索/取源/SVG 缩略图/静态站点）
-├── wasm-build/                  # Node 版引擎产物（服务器渲染缩略图用，已入库免编译）
+├── kage-server.mjs              # 早期本地 dump 服务（参考，编辑器已不使用）
+├── tools/build-glyph-data.mjs   # dump → 静态分片数据（kage-editor/public/glyph-data/）
+├── wasm-build/                  # Node 版引擎产物（kage-server 用，已入库免编译）
 │   └── verify_node.js           # 回归验证：node wasm-build/verify_node.js
-└── glyphwiki-dump/              # 官方 dump 数据（自行下载，不入版本库）
+├── kage-editor/public/glyph-data/  # 预处理后的字形数据（生成文件，入库）
+└── glyphwiki-dump/              # 官方 dump 原始数据（刷新数据时下载，已 gitignore）
 ```
 
 ### 重新编译 WASM（可选，修改 C++ 后执行）
 
-需要 [emsdk](https://github.com/emscripten-core/emsdk)（本项目使用 6.0.11；请先 `git clone` 并 `./emsdk install latest && ./emsdk activate latest`）：
+C++ 引擎源码不在本仓库中，需另行获取 [kage-cpp](https://github.com/takushun-wu/kage-cpp) 放到 `kage-cpp/`（本项目在其上加了逐笔画分离接口的最小扩展，`include_ext/`），并需要 [emsdk](https://github.com/emscripten-core/emsdk)（本项目使用 6.0.11；请先 `git clone` 并 `./emsdk install latest && ./emsdk activate latest`）：
 
 ```bash
 source /path/to/emsdk/emsdk_env.sh
@@ -76,7 +125,7 @@ em++ -std=c++17 -O2 -fexceptions \
   -s EXPORT_NAME=createKageModule -s ENVIRONMENT=web,worker \
   -o kage-editor/public/kage-wasm/kage.js
 
-# Node 版（本地服务缩略图渲染，供 kage-server.mjs 使用）
+# Node 版（仅供 kage-server.mjs 参考实现使用）
 em++ -std=c++17 -O2 -fexceptions \
   -I kage-cpp/include -I kage-cpp/include_ext \
   kage-editor/wasm-glue/kage_glue.cpp kage-cpp/src/*.cpp \
@@ -107,7 +156,7 @@ node wasm-build/verify_node.js
 
 ### 代码 —— GPL-3.0-only
 
-本仓库全部原创代码（胶水层、集成改造、kage-server）及 kage-editor、kage-cpp 源码均遵循 **GNU GPL v3**（完整文本见 `kage-editor-master/COPYING` 与 `kage-cpp-main/LICENSE`）。由于上游为 GPL v3，对外分发本项目的修改版或衍生品时：
+本仓库全部原创代码（胶水层、集成改造、数据预处理脚本、kage-server）及 kage-editor、kage-cpp（编译产物）均遵循 **GNU GPL v3**（完整文本见根目录 `LICENSE` 与 `kage-editor/COPYING`）。由于上游为 GPL v3，对外分发本项目的修改版或衍生品时：
 
 1. 必须一并公开源代码；
 2. 只能以 GPL v3（或兼容的更高版本）发布——即 GPL 的传染性；
@@ -115,7 +164,7 @@ node wasm-build/verify_node.js
 
 ### GlyphWiki dump 数据 —— 宽松许可（非 GPL）
 
-`dump.tar.gz` 内自带的许可声明（`LICENSE.txt`，Copyright 2009 GlyphWiki Project）允许**自由使用、复制、修改与再分发（含商业使用），不提供任何担保**。该数据许可独立于代码的 GPL，不改变代码部分的许可义务。
+`dump.tar.gz` 内自带的许可声明（`LICENSE.txt`，Copyright 2009 GlyphWiki Project）允许**自由使用、复制、修改与再分发（含商业使用），不提供任何担保**。该数据许可独立于代码的 GPL，不改变代码部分的许可义务。随仓库分发的预处理数据附带该许可：`kage-editor/public/glyph-data/GLYPHWIKI-LICENSE.txt`。
 
 ### 生成的字形 —— 不受 GPL 约束
 
@@ -126,5 +175,5 @@ node wasm-build/verify_node.js
 1. 搜索现有部件（支持按汉字码位、按名称前缀，如 `toki-`、`jm-`、`akr-` 等文献来源编号）；
 2. 用部件引用（`99:` 笔画）拼装新字，调整拉伸参数适配字形框；
 3. 缺失部件可直接手绘补制；
-4. 导出 1000×1000 SVG 矢量轮廓；
+4. 导出 1000×1000 SVG 矢量轮廓，并「导出KAGE数据」保存可再编辑的 Kage 源码（可通过 `#data=` 参数重新打开，或提交到 GlyphWiki）；
 5. 导入 [FontForge](https://fontforge.org/)（引擎亦支持 SFD 输出）或字库生产工具链，注册至 Unicode 私用区（PUA）或配合 IVS 扩展序列方案。
