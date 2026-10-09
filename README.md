@@ -113,7 +113,7 @@ git add kage-editor/public/glyph-data && git commit -m "glyph-data: GlyphWiki du
 
 ### 重新编译 WASM（可选，修改 C++ 后执行）
 
-C++ 引擎源码以 git submodule 形式位于 `kage-cpp/`，指向 [open-guji/kage-cpp](https://github.com/open-guji/kage-cpp)。它 fork 自上游 [takushun-wu/kage-cpp](https://github.com/takushun-wu/kage-cpp)，在上游 `6043d9a` 之上只加了一个提交：逐笔画分离渲染接口（`KageFont::DrawGlyphSeparated`、`Kage::MakeGlyphSeparatedOut`，供胶水层做笔画选择/拖动），来自 UltraBriefnessCinema (mahiro) 的 patch，未改动原有算法。
+C++ 引擎源码以 git submodule 形式位于 `kage-cpp/`，指向 [open-guji/kage-cpp](https://github.com/open-guji/kage-cpp)。它 fork 自上游 [takushun-wu/kage-cpp](https://github.com/takushun-wu/kage-cpp)，在上游 `6043d9a` 之上只增加了逐笔画分离渲染接口（`KageFont::DrawGlyphSeparated`、`Kage::MakeGlyphSeparatedOut`，供胶水层做笔画选择/拖动），未改动原有算法：UltraBriefnessCinema (mahiro) 的 patch，加上整理和一处修复（翻转/旋转行 `0:97/98/99` 在逐笔画渲染时未生效）。
 
 取得源码：`git clone --recurse-submodules <本仓库>`；已 clone 的仓库执行 `git submodule update --init`。
 
