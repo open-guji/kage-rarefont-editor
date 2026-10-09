@@ -102,6 +102,7 @@ git add kage-editor/public/glyph-data && git commit -m "glyph-data: GlyphWiki du
 │       ├── svgExport.ts         # SVG 导出（默认 1000×1000）
 │       ├── kage.ts              # 统一渲染出口（C++ 优先，JS 引擎兜底）
 │       └── components/…         # Stroke/Glyph/EditorControls/PartsList 等适配改造
+├── kage-cpp/                    # C++ 引擎（submodule → open-guji/kage-cpp：上游 + 逐笔画分离接口）
 ├── kage-server.mjs              # 早期本地 dump 服务（参考，编辑器已不使用）
 ├── tools/build-glyph-data.mjs   # dump → 静态分片数据（kage-editor/public/glyph-data/）
 ├── wasm-build/                  # Node 版引擎产物（kage-server 用，已入库免编译）
@@ -112,7 +113,11 @@ git add kage-editor/public/glyph-data && git commit -m "glyph-data: GlyphWiki du
 
 ### 重新编译 WASM（可选，修改 C++ 后执行）
 
-C++ 引擎源码不在本仓库中，需另行获取 [kage-cpp](https://github.com/takushun-wu/kage-cpp) 放到 `kage-cpp/`（本项目在其上加了逐笔画分离接口的最小扩展，`include_ext/`），并需要 [emsdk](https://github.com/emscripten-core/emsdk)（本项目使用 6.0.11；请先 `git clone` 并 `./emsdk install latest && ./emsdk activate latest`）：
+C++ 引擎源码以 git submodule 形式位于 `kage-cpp/`，指向 [open-guji/kage-cpp](https://github.com/open-guji/kage-cpp)。它 fork 自上游 [takushun-wu/kage-cpp](https://github.com/takushun-wu/kage-cpp)，在上游 `6043d9a` 之上只加了一个提交：逐笔画分离渲染接口（`KageFont::DrawGlyphSeparated`、`Kage::MakeGlyphSeparatedOut`，供胶水层做笔画选择/拖动），来自 UltraBriefnessCinema (mahiro) 的 patch，未改动原有算法。
+
+取得源码：`git clone --recurse-submodules <本仓库>`；已 clone 的仓库执行 `git submodule update --init`。
+
+编译需要 [emsdk](https://github.com/emscripten-core/emsdk)。仓库中的 WASM 产物用 emsdk 4.0.22 编译（`./emsdk install 4.0.22 && ./emsdk activate 4.0.22`）：
 
 ```bash
 source /path/to/emsdk/emsdk_env.sh
@@ -145,6 +150,7 @@ node wasm-build/verify_node.js
 |---|---|---|---|
 | kage-editor（字形编辑器） | kurgm | <https://github.com/kurgm/kage-editor> | GPL-3.0-only |
 | kage-cpp（贝塞尔优化 C++ 引擎） | Takushun Wu (takushun-wu) | <https://github.com/takushun-wu/kage-cpp> | GPL-3.0 |
+| kage-cpp 逐笔画分离接口 patch | mahiro (UltraBriefnessCinema) | <https://github.com/open-guji/kage-cpp> | GPL-3.0 |
 | Kage 引擎原版（JavaScript） | 上地宏一 Kamichi Koichi | <https://github.com/kamichikoichi/kage-engine> | GPL |
 | ge9 改版 Kage 引擎 | ge9 | <https://github.com/ge9/kage-engine-2> | GPL |
 | kage-engine npm 包（编辑器内置 JS 引擎） | kurgm | <https://www.npmjs.com/package/@kurgm/kage-engine> | GPL-3.0-only |
@@ -156,7 +162,7 @@ node wasm-build/verify_node.js
 
 ### 代码 —— GPL-3.0-only
 
-本仓库全部原创代码（胶水层、集成改造、数据预处理脚本、kage-server）及 kage-editor、kage-cpp（编译产物）均遵循 **GNU GPL v3**（完整文本见根目录 `LICENSE` 与 `kage-editor/COPYING`）。由于上游为 GPL v3，对外分发本项目的修改版或衍生品时：
+本仓库全部原创代码（胶水层、集成改造、数据预处理脚本、kage-server）及 kage-editor、kage-cpp（`kage-cpp/` submodule 及其编译产物）均遵循 **GNU GPL v3**（完整文本见根目录 `LICENSE` 与 `kage-editor/COPYING`）。由于上游为 GPL v3，对外分发本项目的修改版或衍生品时：
 
 1. 必须一并公开源代码；
 2. 只能以 GPL v3（或兼容的更高版本）发布——即 GPL 的传染性；

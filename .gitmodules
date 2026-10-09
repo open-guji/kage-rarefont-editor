@@ -1,0 +1,3 @@
+[submodule "kage-cpp"]
+	path = kage-cpp
+	url = ../kage-cpp.git
